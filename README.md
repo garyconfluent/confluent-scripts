@@ -2,7 +2,7 @@
 
 ## schema_check.sh 
 
-Script to extract schemas(subjects) and all cluster topics and compares schema against topic using `topicNamingStrategy.
+Script to extract schemas(subjects) and all cluster topics and compares schema against topic using `topicNamingStrategy`.
 ### Usage:
 ```
 ./schema_check.sh \
