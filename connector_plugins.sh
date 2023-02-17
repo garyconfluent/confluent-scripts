@@ -1,4 +1,6 @@
 #!/bin/bash
+# @Author: Scott Stroud
+
 start=`date +%s`
 
 # Array of Connector Names (strings) that you care about
