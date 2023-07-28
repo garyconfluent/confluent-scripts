@@ -45,3 +45,8 @@ Latest Connector Versions as of 2023-02-17 10:50:43
 "snowflake-kafka-connector:1.8.2 - Release Date: 2022-11-11"
 "kafka-connect-json-schema:0.2.5 - Release Date: 2020-05-19"
  ```
+
+ ### To get a list of all connectors in a pretty tabular format
+ ```
+ curl -s -S 'https://api.hub.confluent.io/api/plugins?per_page=100000' | jq -r 'sort_by([].name)|["name","version","release_date"] , (.[]|[.name,.version,.release_date]) |@csv'|tr -d '"' | column -t -s "," 
+ ```
