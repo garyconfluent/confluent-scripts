@@ -50,3 +50,16 @@ Latest Connector Versions as of 2023-02-17 10:50:43
  ```
  curl -s -S 'https://api.hub.confluent.io/api/plugins?per_page=100000' | jq -r 'sort_by([].name)|["name","version","release_date"] , (.[]|[.name,.version,.release_date]) |@csv'|tr -d '"' | column -t -s "," 
  ```
+ #### Output looks like the following:
+ ```
+ name                                         version            release_date
+baffle-transforms                            1.0.7              2023-03-10
+clickhouse-kafka-connect                     0.0.17             2023-07-13
+cockroach-cdc                                19.1.0
+confluent-sap-connector                      9.3
+connect                                      5.7.01
+connect-transforms                           1.4.3              2022-06-09
+data-replication                             11.4.0
+databricks-kafka                             6.4
+...
+ ```
