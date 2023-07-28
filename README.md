@@ -23,7 +23,6 @@ Script to query Confluent Connector Hub to list all connector plugins based on a
 
 ```
 connectors=(
-
    "kafka-connect-ibmmq"
    "snowflake-kafka-connector"
    "kafka-connect-replicator"
@@ -31,7 +30,6 @@ connectors=(
    "kafka-connect-json-schema"
    "kafka-connect-salesforce"
    "kafka-connect-s3-source"
-
 )
 ```
 
