@@ -48,7 +48,7 @@ Latest Connector Versions as of 2023-02-17 10:50:43
 
  ### To get a list of all connectors in a pretty tabular format
  ```
- curl -s -S 'https://api.hub.confluent.io/api/plugins?per_page=100000' | jq -r 'sort_by([].name)|["name","version","release_date"] , (.[]|[.name,.version,.release_date]) |@csv'|tr -d '"' | column -t -s "," 
+curl -s -S 'https://api.hub.confluent.io/api/plugins?per_page=100000' | jq -r '.|sort_by(.name)|["name","version","release_date"] , (.[]|[.name,.version,.release_date]) |@csv'|tr -d '"' | column -t -s ","
  ```
  #### Output looks like the following:
  ```
