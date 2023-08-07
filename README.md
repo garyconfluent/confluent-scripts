@@ -63,3 +63,25 @@ data-replication                             11.4.0
 databricks-kafka                             6.4
 ...
  ```
+
+ #Get Confluent Cloud Broker List
+
+ This small script will use kafkacat command to return just the broker names. This can be used in /etc/hosts files to 
+ connect to Private Link networks through proxies
+
+ ```
+kcatout=$(kafkacat \
+    -X security.protocol=SASL_SSL \
+    -X "sasl.username=$key" \
+    -X "sasl.password=$secret" \
+    -X sasl.mechanisms=PLAIN \
+    -X api.version.request=true \
+    -b "$bootstrap" \
+    -L)
+brokers=$(echo "$kcatout" | grep ' at ' | sed -e 's/.* at //' -e 's/ .*//' | tr -d '\r')
+for broker in $brokers
+do
+  brkr=$(echo $broker |sed -e 's/:.*//')
+  echo $brkr
+done
+ ```
